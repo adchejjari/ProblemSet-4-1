@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.core import serializers
 
@@ -20,7 +20,7 @@ def add(request):
         content = request.POST['content-field']
         post = StoryPost(author=author, content=content)
         post.save()
-        return highlight(request)
+        return redirect('highlight')
 
     return render(request, 'add.html')
     
