@@ -44,6 +44,20 @@
     background: transparent;
   }
 
+  .login-box .user-box select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: rgba(0,0,0,.6);
+    border-radius: 8px;
+  
+  }
+
 
   .login-box .user-box label {
     position: absolute;

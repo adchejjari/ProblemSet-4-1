@@ -20,19 +20,19 @@
     </nav>
     <div class="content">
       <div class="login-box">
-        <h2>New story</h2>
+        <h2>New Quote</h2>
         <form method="POST" id="data-form">
           {% csrf_token %}
           <div class="user-box">
-            <input
-              type="text"
-              name="author-field"
-              id="author"
-              required=""
-              maxlength="20"
-            />
-            <label>Name</label>
+            <select type="text" name="author-field" id="author" required="">
+              <option value="">Please choose an author</option>
+              {% for author in authors %}
+              <option value="{{author.id}}">{{ author.name }}</option>
+              {% endfor %}
+            </select>
           </div>
+          <br />
+          <br />
           <div class="user-box">
             <input
               type="text"
@@ -42,7 +42,7 @@
               style="height: 200px"
               maxlength="120"
             />
-            <label>Story</label>
+            <label>Quote</label>
           </div>
           <a
             onclick="document.getElementById('data-form').submit();"
